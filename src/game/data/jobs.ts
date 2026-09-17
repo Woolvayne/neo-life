@@ -1,0 +1,288 @@
+export type JobDef = {
+  id: string;
+  name: string;
+  dept: "civil" | "police" | "fire" | "medical" | "public";
+  icon: string;
+  style: string;
+  basePay: number;
+  desc: string;
+  ranks: string[];
+  vehicles: string[];
+  tools: string[];
+  missionVerb: string;
+  missionKind: "transport" | "service" | "emergency";
+  minLevel: number;
+};
+
+export const JOBS: JobDef[] = [
+  {
+    id: "taxi",
+    name: "Taxi Driver",
+    dept: "civil",
+    icon: "🚕",
+    style: "casual",
+    basePay: 140,
+    desc: "Pick up fares across NovaCity and drop them at their destination.",
+    ranks: ["Trainee", "Driver", "Senior Driver", "Fleet Lead", "Owner"],
+    vehicles: ["kompakt", "sedan"],
+    tools: ["meter", "radio"],
+    missionVerb: "Pick up fare",
+    missionKind: "transport",
+    minLevel: 1,
+  },
+  {
+    id: "bus",
+    name: "Bus Driver",
+    dept: "public",
+    icon: "🚌",
+    style: "casual",
+    basePay: 165,
+    desc: "Run the Nova Transit loop and keep the schedule.",
+    ranks: ["Trainee", "Operator", "Line Operator", "Depot Lead"],
+    vehicles: ["citybus"],
+    tools: ["ticketing", "radio"],
+    missionVerb: "Board passengers",
+    missionKind: "transport",
+    minLevel: 1,
+  },
+  {
+    id: "trucker",
+    name: "Truck Driver",
+    dept: "civil",
+    icon: "🚚",
+    style: "casual",
+    basePay: 240,
+    desc: "Haul containers between the port, industry and the county.",
+    ranks: ["Rookie", "Hauler", "Long Haul", "Logistics Chief"],
+    vehicles: ["boxtruck"],
+    tools: ["manifest"],
+    missionVerb: "Load freight",
+    missionKind: "transport",
+    minLevel: 2,
+  },
+  {
+    id: "delivery",
+    name: "Delivery Driver",
+    dept: "civil",
+    icon: "📦",
+    style: "casual",
+    basePay: 120,
+    desc: "Fast parcel runs around the districts.",
+    ranks: ["Courier", "Rider", "Route Lead"],
+    vehicles: ["van", "kompakt"],
+    tools: ["scanner"],
+    missionVerb: "Collect parcel",
+    missionKind: "transport",
+    minLevel: 1,
+  },
+  {
+    id: "mechanic",
+    name: "Mechanic",
+    dept: "civil",
+    icon: "🔧",
+    style: "construction",
+    basePay: 190,
+    desc: "Repair broken down vehicles in the field.",
+    ranks: ["Apprentice", "Mechanic", "Master Mechanic", "Workshop Owner"],
+    vehicles: ["towtruck", "van"],
+    tools: ["wrenchkit", "jack"],
+    missionVerb: "Repair vehicle",
+    missionKind: "service",
+    minLevel: 1,
+  },
+  {
+    id: "construction",
+    name: "Construction Worker",
+    dept: "civil",
+    icon: "🏗️",
+    style: "construction",
+    basePay: 175,
+    desc: "Work the sites across the industrial ring.",
+    ranks: ["Labourer", "Operator", "Foreman", "Site Manager"],
+    vehicles: ["boxtruck"],
+    tools: ["hardhat", "drill"],
+    missionVerb: "Work site",
+    missionKind: "service",
+    minLevel: 1,
+  },
+  {
+    id: "security",
+    name: "Security Guard",
+    dept: "civil",
+    icon: "🛡️",
+    style: "security",
+    basePay: 160,
+    desc: "Guard patrols, alarm checks and escorting valuables.",
+    ranks: ["Guard", "Senior Guard", "Shift Lead", "Site Chief"],
+    vehicles: ["suv"],
+    tools: ["baton", "flashlight", "radio"],
+    missionVerb: "Check alarm",
+    missionKind: "service",
+    minLevel: 1,
+  },
+  {
+    id: "journalist",
+    name: "Journalist",
+    dept: "civil",
+    icon: "🎙️",
+    style: "business",
+    basePay: 150,
+    desc: "Report live from incidents around the city.",
+    ranks: ["Intern", "Reporter", "Field Reporter", "Editor"],
+    vehicles: ["kompakt"],
+    tools: ["camera", "mic"],
+    missionVerb: "Film report",
+    missionKind: "service",
+    minLevel: 1,
+  },
+  {
+    id: "restaurant",
+    name: "Restaurant Worker",
+    dept: "civil",
+    icon: "🍽️",
+    style: "casual",
+    basePay: 110,
+    desc: "Serve the hungry citizens of Kronen Plaza.",
+    ranks: ["Trainee", "Server", "Chef", "Manager"],
+    vehicles: [],
+    tools: ["apron"],
+    missionVerb: "Serve guests",
+    missionKind: "service",
+    minLevel: 1,
+  },
+  {
+    id: "shop",
+    name: "Shop Worker",
+    dept: "civil",
+    icon: "🏪",
+    style: "casual",
+    basePay: 105,
+    desc: "Stock shelves and run the register.",
+    ranks: ["Trainee", "Clerk", "Shift Lead", "Store Manager"],
+    vehicles: [],
+    tools: ["scanner"],
+    missionVerb: "Restock",
+    missionKind: "service",
+    minLevel: 1,
+  },
+  {
+    id: "postal",
+    name: "Postal Service",
+    dept: "public",
+    icon: "✉️",
+    style: "casual",
+    basePay: 125,
+    desc: "Deliver mail on the daily route.",
+    ranks: ["Carrier", "Senior Carrier", "Route Chief"],
+    vehicles: ["van"],
+    tools: ["mailbag"],
+    missionVerb: "Deliver mail",
+    missionKind: "transport",
+    minLevel: 1,
+  },
+  {
+    id: "roadmaint",
+    name: "Road Maintenance",
+    dept: "public",
+    icon: "🚧",
+    style: "construction",
+    basePay: 170,
+    desc: "Clear debris and reopen roads after incidents.",
+    ranks: ["Crew", "Operator", "Crew Chief"],
+    vehicles: ["boxtruck", "van"],
+    tools: ["cones", "broom"],
+    missionVerb: "Clear road",
+    missionKind: "emergency",
+    minLevel: 1,
+  },
+  {
+    id: "tow",
+    name: "Tow Operator",
+    dept: "public",
+    icon: "🪝",
+    style: "construction",
+    basePay: 185,
+    desc: "Recover wrecks and illegally parked vehicles.",
+    ranks: ["Driver", "Recovery Op", "Yard Chief"],
+    vehicles: ["towtruck"],
+    tools: ["hook", "winch"],
+    missionVerb: "Hook vehicle",
+    missionKind: "emergency",
+    minLevel: 1,
+  },
+  {
+    id: "police",
+    name: "Police Officer",
+    dept: "police",
+    icon: "🚓",
+    style: "police",
+    basePay: 260,
+    desc: "Nova Police Service — patrol, traffic, pursuit and arrests.",
+    ranks: [
+      "Cadet",
+      "Officer",
+      "Senior Officer",
+      "Sergeant",
+      "Lieutenant",
+      "Captain",
+      "Commander",
+    ],
+    vehicles: ["patrol", "interceptor", "swatvan"],
+    tools: ["taser", "cuffs", "baton", "flashlight", "radio", "mdt"],
+    missionVerb: "Respond to call",
+    missionKind: "emergency",
+    minLevel: 1,
+  },
+  {
+    id: "fire",
+    name: "Firefighter",
+    dept: "fire",
+    icon: "🚒",
+    style: "fire",
+    basePay: 245,
+    desc: "Nova Fire & Rescue — fires, rescues and hazardous materials.",
+    ranks: ["Recruit", "Firefighter", "Rescue Specialist", "Fire Officer", "Battalion Chief"],
+    vehicles: ["engine", "rescue"],
+    tools: ["hose", "extinguisher", "cutter", "radio"],
+    missionVerb: "Fight fire",
+    missionKind: "emergency",
+    minLevel: 1,
+  },
+  {
+    id: "medical",
+    name: "Paramedic",
+    dept: "medical",
+    icon: "🚑",
+    style: "medical",
+    basePay: 250,
+    desc: "Nova Medical Response — treat and transport patients.",
+    ranks: ["Trainee", "Paramedic", "Senior Paramedic", "Emergency Doctor", "Medical Chief"],
+    vehicles: ["ambulance", "medicsuv"],
+    tools: ["medkit", "defib", "stretcher", "radio"],
+    missionVerb: "Treat patient",
+    missionKind: "emergency",
+    minLevel: 1,
+  },
+];
+
+export const JOB_MAP: Record<string, JobDef> = Object.fromEntries(
+  JOBS.map((j) => [j.id, j]),
+);
+
+export function rankName(jobId: string, rank: number) {
+  const job = JOB_MAP[jobId];
+  if (!job) return "Civilian";
+  return job.ranks[Math.min(rank, job.ranks.length - 1)];
+}
+
+export function rankForXp(jobId: string, xp: number) {
+  const job = JOB_MAP[jobId];
+  if (!job) return 0;
+  const step = 600;
+  return Math.min(job.ranks.length - 1, Math.floor(xp / step));
+}
+
+export function isEmergency(jobId: string) {
+  const j = JOB_MAP[jobId];
+  return !!j && (j.dept === "police" || j.dept === "fire" || j.dept === "medical");
+}

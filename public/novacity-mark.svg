@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="NovaCity mark">
+  <defs>
+    <linearGradient id="g" x1="16" y1="8" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset=".48" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#3730a3"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#070b12"/>
+  <rect x="8" y="8" width="112" height="112" rx="25" fill="url(#g)"/>
+  <path d="M25 96V63h18v33H25Zm26 0V31h25v65H51Zm33 0V52h19v44H84Z" fill="#fff"/>
+  <path d="M31 70h6m-6 9h6m27-38h-7m7 11h-7m7 11h-7m7 11h-7m34-11h-6m6 10h-6" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <path d="M18 100h92" stroke="#dbeafe" stroke-width="6" stroke-linecap="round"/>
+</svg>
